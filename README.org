@@ -49,5 +49,5 @@ If you have a collision, *DropboxClone will not care*, it will do exactly what y
     - You can actually sync whole GitHub repositories with outstanding eddits from one computer to another using DropboxClone (type at home, type at work, you are editing the same files)
     - You can use =pre_push.sh= and =post_pull.sh= to sync all important dot files, I use it to sync my configs, aliases, browser addons, emacs, cache, local, ssh and thunderbird. Just copy the files into DropboxClone in =pre_push.sh= and copy them into their normal spots in =post_pull.sh=. I have given an example of this for my =~/.emacs.d/=
 
-* Contact information
+* Contact
 If you have an issue or want help from a human, feel free to open an Issue on this repository and I will help
