@@ -4,7 +4,7 @@
 This is a Linux Bash script to mimic the functionality of Dropbox using rsync and SSH
 
 * Dependencies
-    =rsync= [[https://linux.die.net/man/1/rsync][man page]]
-    =ssh= [[https://linux.die.net/man/1/ssh][man page]]
-    =sshpass= [[https://linux.die.net/man/1/sshpass][man page]]
-    =time= [[https://linux.die.net/man/1/time][man page]]
+    - ~rsync~ [[https://linux.die.net/man/1/rsync][man page]]
+    - ~ssh~ [[https://linux.die.net/man/1/ssh][man page]]
+    - ~sshpass~ [[https://linux.die.net/man/1/sshpass][man page]]
+    - ~time~ [[https://linux.die.net/man/1/time][man page]]
