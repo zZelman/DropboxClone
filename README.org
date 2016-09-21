@@ -1,19 +1,19 @@
-#+TITLE: DropboxClone
 #+AUTHOR: Kyle Avrett
 
+* Overview
 This is a Linux Bash script to mimic the functionality of Dropbox using rsync and SSH
 
 The point is to have a manual script that can sync a specific directory between multiple computers using a passive server as a go-between.
 
 * Quickstart
-    1) Clone or download this repository
-    2) Change the user, password and ip inside of =home.sh= and =remote.sh=
-    3) Change what is in =post_pull.sh= and =pre_push.sh=
-    4) Manually ssh to the server (the user and ip from above) to add it to =~/.ssh/known_hosts=, otherwise =sshpass= will not work
-    5) Run =home.sh push= or =remote.sh push= to sync everything inside of the local =~/DropboxClone= with the remote =~/DropboxClone=
-    6) Change to another computer that you wish to use DropboxClone (like a laptop)
-    7) Complete steps 1, 2 and 4 using the same information (skip step 3, those are files that will be synced)
-    8) Run =home.sh pull= or =remote.sh pull= *twice* to sync the remote =~/DropboxClone= with the local =~/DropboxClone=. The first time is to sync all the files, the second is to have the =post_pull.sh= be accurate and run correctly
+    1. Clone or download this repository
+    2. Change the user, password and ip inside of =home.sh= and =remote.sh=
+    3. Change what is in =post_pull.sh= and =pre_push.sh=
+    4. Manually ssh to the server (the user and ip from above) to add it to =~/.ssh/known_hosts=, otherwise =sshpass= will not work
+    5. Run =home.sh push= or =remote.sh push= to sync everything inside of the local =~/DropboxClone= with the remote =~/DropboxClone=
+    6. Change to another computer that you wish to use DropboxClone (like a laptop)
+    7. Complete steps 1, 2 and 4 using the same information (skip step 3, those are files that will be synced)
+    8. Run =home.sh pull= or =remote.sh pull= *twice* to sync the remote =~/DropboxClone= with the local =~/DropboxClone=. The first time is to sync all the files, the second is to have the =post_pull.sh= be accurate and run correctly
 
 * Dependencies
 These must be available inside of your terminal, I suggest using your package manager to install them
