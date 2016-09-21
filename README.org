@@ -33,9 +33,11 @@ There are only two options for arguments, and no default
 By using the *push* and *pull* command correctly, you transfer the "up to date-ness" from your computer, to the server, to your other computer
 
 * Warnings
+This bash script does not work on Windows, and I have not tried it in Cygwin. Use at your own risk, but if you find a solution feel free to send me a pull request.
+
 The updating functionality of =rsync= is rudimentary and can be *destructive* (losing files, loosing contense of files, etc), as such, the only real way to use this script is to use it as intended as described in the [[https://github.com/zZelman/DropboxClone#usage][Usage]] section. But if you do so, you have an extreamly light weight Dropbox clone which you can control yourself when you want to.
 
-If you have a collision, DropboxClone will *not care*, it will do exactly what you tell it and you will probably loose things. If by chance you do not run this script as intended and have one computer that is more up to date than another in some areas, but not in others, it is up to you to figure out how to get yourself out of it.
+If you have a collision, *DropboxClone will not care*, it will do exactly what you tell it and you will probably loose things. If by chance you do not run this script as intended and have one computer that is more up to date than another in some areas, but not in others, it is up to you to figure out how to get yourself out of it.
 
 * Tips
     - You allow this script to be executed from anywhere by symlinking it to your =~/usr/bin= by running =sudo ln -s ~/DropboxClone/home.sh /usr/bin/dropbox-home= and =sudo ln -s ~/DropboxClone/remote.sh /usr/bin/dropbox-remote=
@@ -45,3 +47,6 @@ If you have a collision, DropboxClone will *not care*, it will do exactly what y
     - You can have a temporary folder within DropboxClone like =~/DropboxClone/Dropbox/tmp/= to store things in that you dont want to transfer on a USB by transferring them bu using the normal *push* switch *pull* [[https://github.com/zZelman/DropboxClone#usage][Usage]]
     - You can actually sync whole GitHub repositories with outstanding eddits from one computer to another using DropboxClone (type at home, type at work, you are editing the same files)
     - You can use =pre_push.sh= and =post_pull.sh= to sync all important dot files, I use it to sync my configs, aliases, browser addons, emacs, cache, local, ssh and thunderbird. Just copy the files into DropboxClone in =pre_push.sh= and copy them into their normal spots in =post_pull.sh=. I have given an example of this for my =~/.emacs.d/=
+
+* Contact information
+If you have an issue or want help from a human, feel free to open an Issue on this repository and I will help
