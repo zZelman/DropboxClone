@@ -9,4 +9,4 @@
 RSYNC_ARGS="--archive --update --compress --human-readable --delete-before"
 
 ## emacs from dropbox -> local
-rsync $RSYNC_ARGS ~/DropboxClone/Dropbox/dot-files/.emacs* ~/
+#rsync $RSYNC_ARGS ~/DropboxClone/Dropbox/dot-files/.emacs* ~/
