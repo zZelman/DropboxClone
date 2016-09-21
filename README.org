@@ -6,25 +6,25 @@ This is a Linux Bash script to mimic the functionality of Dropbox using rsync an
 The point is to have a manual script that can sync a specific directory between multiple computers using a passive server as a go-between.
 
 * Quickstart
-    1. Clone or download this repository
-    2. Change the user, password and ip inside of ~home.sh~ and ~remote.sh~
-    3. Change what is in ~post_pull.sh~ and ~pre_push.sh~
-    4. Manually ssh to the server (the user and ip from above) to add it to ~~/.ssh/known_hosts~, otherwise ~sshpass~ will not work
-    5. Run ~home.sh push~ or ~remote.sh push~ to sync everything inside of the local ~~/DropboxClone~ with the remote ~~/DropboxClone~
-    6. Change to another computer that you wish to use *DropboxClone* (like a laptop)
-    7. Complete steps 1, 2 and 4 using the same information (skip step 3, those are files that will be synced)
-    8. Run ~home.sh pull~ or ~remote.sh pull~ *twice* to sync the remote ~~/DropboxClone~ with the local ~~/DropboxClone~. The first time is to sync all the files, the second is to have the ~post_pull.sh~ be accurate and run correctly
+    1) Clone or download this repository
+    2) Change the user, password and ip inside of =home.sh= and =remote.sh=
+    3) Change what is in =post_pull.sh= and =pre_push.sh=
+    4) Manually ssh to the server (the user and ip from above) to add it to =~/.ssh/known_hosts=, otherwise =sshpass= will not work
+    5) Run =home.sh push= or =remote.sh push= to sync everything inside of the local =~/DropboxClone= with the remote =~/DropboxClone=
+    6) Change to another computer that you wish to use *DropboxClone* (like a laptop)
+    7) Complete steps 1, 2 and 4 using the same information (skip step 3, those are files that will be synced)
+    8) Run =home.sh pull= or =remote.sh pull= *twice* to sync the remote =~/DropboxClone= with the local =~/DropboxClone=. The first time is to sync all the files, the second is to have the =post_pull.sh= be accurate and run correctly
 
 * Dependencies
-    - ~rsync~ [[https://linux.die.net/man/1/rsync][man page]]
-    - ~ssh~ [[https://linux.die.net/man/1/ssh][man page]]
-    - ~sshpass~ [[https://linux.die.net/man/1/sshpass][man page]]
-    - ~time~ [[https://linux.die.net/man/1/time][man page]]
+    - =rsync= [[https://linux.die.net/man/1/rsync][man page]]
+    - =ssh= [[https://linux.die.net/man/1/ssh][man page]]
+    - =sshpass= [[https://linux.die.net/man/1/sshpass][man page]]
+    - =time= [[https://linux.die.net/man/1/time][man page]]
 
 * Usage
 This is a *manual* script. Meaning, you have to run the script for it to work.
 
-Normally what I do is at the end of the session on one computer, say my desktop, I run ~~/DropboxClone/home.sh push~. Start using my laptop, and before I have done anything I run the command ~~/DropboxClone/remote.sh pull~ if I am outside my local network or ~~/DropboxClone/home.sh pull~ if I am inside of it.
+Normally what I do is at the end of the session on one computer, say my desktop, I run =~/DropboxClone/home.sh push=. Start using my laptop, and before I have done anything I run the command =~/DropboxClone/remote.sh pull= if I am outside my local network or =~/DropboxClone/home.sh pull= if I am inside of it.
 
 There are only two options for arguments, and no default
     - *push* assume that everything on this computer is more up to date than anywhere else, overwrite all files on the server that have been modified by this computer.
@@ -33,9 +33,9 @@ There are only two options for arguments, and no default
 By using the *push* and *pull* command correctly, you transfer the "up to date-ness" from your computer, to the server, to your other computer
 
 * Warnings
-The updating functionality of ~rsync~ is rudimentary and can be *destructive* (losing files, loosing contense of files, etc), as such, the only real way to use this script is to use it as intended as described in the [[Usage]] section. But if you do so, you have an extreamly light weight Dropbox clone which you can control yourself when you want to.
+The updating functionality of =rsync= is rudimentary and can be *destructive* (losing files, loosing contense of files, etc), as such, the only real way to use this script is to use it as intended as described in the [[Usage]] section. But if you do so, you have an extreamly light weight Dropbox clone which you can control yourself when you want to.
 
 * Tips
-    - You allow this script to be executed from anywhere by symlinking it to your ~/usr/bin~ by running ~sudo ln -s ~/DropboxClone/home.sh /usr/bin/dropbox-home~ and ~sudo ln -s ~/DropboxClone/remote.sh /usr/bin/dropbox-remote~
-    - You can add this to your bash aliases by adding ~alias dropbox-remote='~/DropboxClone/remote.sh'~ and ~alias dropbox-home='~/DropboxClone/home.sh'~
-    - You can add anything to the ~pre_push.sh~ and ~post_pull.sh~ that would help you sync files outside of the ~~/DropboxClone~ directory, like dot files. I have given an example for Emacs' ~~/.emacs.d~ in them.
+    - You allow this script to be executed from anywhere by symlinking it to your =~/usr/bin= by running =sudo ln -s ~/DropboxClone/home.sh /usr/bin/dropbox-home= and =sudo ln -s ~/DropboxClone/remote.sh /usr/bin/dropbox-remote=
+    - You can add this to your bash aliases by adding =alias dropbox-remote='~/DropboxClone/remote.sh'= and =alias dropbox-home='~/DropboxClone/home.sh'=
+    - You can add anything to the =pre_push.sh= and =post_pull.sh= that would help you sync files outside of the =~/DropboxClone= directory, like dot files. I have given an example for Emacs' =~/.emacs.d= in them.
