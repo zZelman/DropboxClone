@@ -16,7 +16,7 @@ The point is to have a manual script that can sync a specific directory between 
     8) Run =home.sh pull= or =remote.sh pull= *twice* to sync the remote =~/DropboxClone= with the local =~/DropboxClone=. The first time is to sync all the files, the second is to have the =post_pull.sh= be accurate and run correctly
 
 * Dependencies
-These must be available inside of your terminal, I suggest using your package manager to download them
+These must be available inside of your terminal, I suggest using your package manager to install them
     - =rsync= [[https://linux.die.net/man/1/rsync][man page]]
     - =ssh= [[https://linux.die.net/man/1/ssh][man page]]
     - =sshpass= [[https://linux.die.net/man/1/sshpass][man page]]
